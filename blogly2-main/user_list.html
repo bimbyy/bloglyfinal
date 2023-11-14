@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}User List{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h2>User List</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                {% for user in users %}
+                    <li class="list-group-item">
+                        {{ user.first_name }} {{ user.last_name }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a href="{{ url_for('user_detail', user_id=user.id) }}" class="btn btn-secondary mt-3">Back to User Detail</a>
+</div>
+{% endblock %}

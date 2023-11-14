@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_title %}User Detail{% endblock %}
+
+{% block content %}
+    <h2>User Details</h2>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Image: <img src="{{ user.image_url }}" alt="User Image"></p>
+    <a href="{{ url_for('edit_user', user_id=user.id) }}" class="btn btn-primary">Edit User</a>
+    <!-- Add a link to view user's posts -->
+    <a href="{{ url_for('user_posts', user_id=user.id) }}" class="btn btn-secondary">View Posts</a>
+{% endblock %}
